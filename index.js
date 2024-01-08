@@ -1,11 +1,13 @@
 import express from 'express'
 import { connectDb } from './db.js'
 import { PORT } from './config.js'
+import cors from 'cors'
 
 const app = express()
+app.use(cors())
 
-app.get('/', (req, res) => {
-    res.json('Hola mundo')
+app.get('/getData', (req, res) => {
+    res.json('Esta es la llamada que se hizo al backend y funciono')
 })
 
 connectDb()
