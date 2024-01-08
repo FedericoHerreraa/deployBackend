@@ -5,10 +5,7 @@ import cors from 'cors'
 
 const app = express()
 app.use(cors())
-
-app.get('/getData', (req, res) => {
-    res.json('Esta es la llamada que se hizo al backend y funciono')
-})
+app.use(express.json())
 
 connectDb()
 app.listen(PORT)
